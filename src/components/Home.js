@@ -44,7 +44,7 @@ export default function Home() {
           <ul>
             {coins.map(coin => {
               return (
-                <li key={coin.id}>
+                <li key={coin.id} className="coin-list-item">
                   <Link to={`/${coin.id}/`}>{coin.name}</Link>
                 </li>
               )
