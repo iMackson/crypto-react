@@ -44,8 +44,8 @@ export default function Home() {
           <ul>
             {coins.map(coin => {
               return (
-                <li key={coin.id} className="coin-list-item">
-                  <Link to={`/${coin.id}/`}>{coin.name}</Link>
+                <li key={coin.id} className="mt-2 py-3 px-2 border border-gray-200 rounded-sm">
+                  <Link to={`/${coin.id}/`} className="hover:text-blue-600">{coin.name}</Link>
                 </li>
               )
             })}

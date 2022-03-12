@@ -18,21 +18,18 @@ export function Navbar() {
       setUser(authService.getUser())
     }
     return (
-      <div>
+      <nav className="py-5 flex items-center justify-between">
+        <ul>
+            <li>
+                <Link to="/" className="text-blue-500 hover:text-blue-600">Home</Link>
+            </li>
+        </ul>
         {user ? (
-          <button onClick={handleLogout}>Logout</button>
+          <button className="px-3 py-2 bg-gray-100 text-gray-800 hover:bg-gray-200 rounded-md" onClick={handleLogout}>Logout</button>
         ) : (
-          <button onClick={handleLogin}>Login</button>
+          <button className="px-3 py-2 bg-gray-100 text-gray-800 hover:bg-gray-200 rounded-md" onClick={handleLogin}>Login</button>
         )}
-        <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-            </ul>
-          </nav> 
-      </div>
-  
+      </nav>
     )
   
   }

@@ -40,8 +40,14 @@ export function Coin() {
 
     return (
         <div>
-            <div>{coinId}</div>
-            {!priceData && "Loading..."}
+            <div className="border-t border-gray-200 py-5 ">
+                <h2 className="text-2xl text-gray-800">{coinId}</h2>
+            </div>
+            {!priceData && (
+                <div className="px-5 bg-gray-100 rounded-sm py-5">
+                    <h4 className="text-xl text-gray-600">Loading...</h4>
+                </div>
+            )}
             {priceData && labels && (
                 <LineChart priceData={priceData} labels={labels} coinId={coinId}/>
             )}
