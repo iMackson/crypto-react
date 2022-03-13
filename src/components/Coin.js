@@ -1,12 +1,14 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import { LineChart } from "./LineChart"
+import { AuthContext } from "./contexts/authContext"
 
 export function Coin() {
     const { coinId } = useParams();
     const [priceData, setPriceData] = useState(null);
     const [labels, setLabels] = useState(null);
+    const { user } = useContext(AuthContext)
     
     
 
@@ -48,8 +50,14 @@ export function Coin() {
                     <h4 className="text-xl text-gray-600">Loading...</h4>
                 </div>
             )}
-            {priceData && labels && (
+            {user ? (
+                <>
+                {priceData && labels && (
                 <LineChart priceData={priceData} labels={labels} coinId={coinId}/>
+                )}
+                </>
+            ) : (
+                <p>You need to be logged in to view price chart</p>
             )}
             
         </div>
