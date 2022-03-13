@@ -53,7 +53,10 @@ export function Coin() {
             {user ? (
                 <>
                 {priceData && labels && (
-                <LineChart priceData={priceData} labels={labels} coinId={coinId}/>
+                <LineChart 
+                    priceData={priceData} 
+                    labels={labels} 
+                    coinId={coinId}/>
                 )}
                 </>
             ) : (

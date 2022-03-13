@@ -24,8 +24,6 @@ export function AuthContextProvider({ children }) {
             login,
             logout,
             user,
-            username: "JoeSoap",
-            email: "test@test.com"
         }}>
             {children}
         </AuthContext.Provider>
